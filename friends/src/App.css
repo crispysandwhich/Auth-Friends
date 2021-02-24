@@ -1,0 +1,51 @@
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.main-header{
+  width: 100%;
+  display: flex;
+  padding: 12px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+}
+.main-header h2{
+  font-size: 2.5rem;
+}
+.main-header ul{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.main-header ul li{
+  padding: 0px 10px ;
+}
+.main-header ul li a{
+  text-decoration: none;
+  color: orangered;
+}
+
+/* friendsPage */
+.friendsPage{
+  padding: 20px;
+}
+.friendsPage h2{
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+.friendsNav {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items:flex-end
+}
+.friendsNav li{
+  font-size: 20px;
+}
