@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 
 function Friends() {
+  const history = useHistory();
 
   const [friends, setFriends] = useState([])
 
@@ -17,8 +19,19 @@ function Friends() {
 
   },[])
 
+  const logout = () => {
+    console.log('bye')
+    localStorage.removeItem('token')
+    history.push('/')
+  }
 
-  if(friends.length < 0){
+  const newFriend = () => {
+    console.log('idk')
+    history.push('/friends/add')
+  }
+
+
+  if(friends.length === 0){
     return (
       <div>
         <h2>My friends</h2>
@@ -28,7 +41,15 @@ function Friends() {
   }
 
   return (
-    <div>
+    <div className="friendsPage">
+      <ul className="friendsNav">
+        <li>
+          <Link onClick={logout}>logout</Link>
+        </li>
+        <li>
+          <Link to="/friends/add">add new friend</Link>
+        </li>
+      </ul>
       <h2>My friends</h2>
       <div>
       {

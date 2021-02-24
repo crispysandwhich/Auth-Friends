@@ -1,11 +1,12 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import PrivateRoute from './utils/PrivateRoute'
 import './App.css';
-import Friends from './components/Friends';
-
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import LoginForm from './components/LoginForm';
+import Friends from './components/Friends';
+// import AddFriends from './components/AddFriends';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/login" component={LoginForm} />
-        <Route path="/friends" component={Friends} />
+        <PrivateRoute path="/friends" component={Friends} />
+        {/* <PrivateRoute path="/friends/add" component={AddFriends} /> */}
       </Switch>
 
     </div>
